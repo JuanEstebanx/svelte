@@ -1,4 +1,6 @@
 <script>
+    import Button from "./Button.svelte";
+
     let someText = "More information send me Email.";
     let name = "JuanEstebanx GitHubProfile";
     let count = 0;
@@ -20,11 +22,12 @@
 </script>
 
 <div class="About">
+    <Button text="Click" {count} on:click={handleClick} />
+    <Button text="DarkMode" on:click={toggle} />
     <button on:click={handleClick}>
         Click Aquí {count == 0 ? "" : count}</button
     >
     <button on:click={toggle}>DarkMode</button>
-    
 
     {#if !style.darkMode}
         <p>{someText}</p>
